@@ -1,0 +1,26 @@
+{
+  "name": "ria1_tdd_training",
+  "version": "1.0.0",
+  "description": "raid1 tdd training",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CPNV-RIA1/RIA1_Shopping.git"
+  },
+  "keywords": [
+    "node",
+    "tdd"
+  ],
+  "author": "nicolas.glassey@cpvn.ch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CPNV-RIA1/RIA1_Shopping/issues"
+  },
+  "homepage": "https://github.com/CPNV-RIA1/RIA1_Shopping#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
