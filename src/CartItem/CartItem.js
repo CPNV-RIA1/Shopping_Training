@@ -12,6 +12,7 @@ module.exports = class CartItem {
     //region public methods
     constructor(articleId, name, quantity, price) {
         if(this.isArticleIdValid(articleId)) throw new InvalidArticleIdException();
+        if(this.isQuantityValid(quantity)) throw new InvalidQuantityException();
         this._articleId = articleId;
         this._name = name;
         this._quantity = quantity;
@@ -50,6 +51,9 @@ module.exports = class CartItem {
     //region private methods
     isArticleIdValid(articleId){
         return articleId < 1;
+    }
+    isQuantityValid(quantity){
+        return quantity < 1;
     }
     //endregion private methods
 }
