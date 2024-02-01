@@ -19,6 +19,7 @@ module.exports = class Cart {
         return this.#items.reduce((accumulator, item) => accumulator + item.total, 0);
     }
     count(distinct = false){
+        this.#ensureItemsNotEmpty()
         return distinct ? this.#items.length : this.#items.reduce((accumulator, item) => accumulator + item.quantity, 0);
     }
     //endregion public methods
