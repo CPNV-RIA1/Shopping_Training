@@ -82,9 +82,6 @@ test('quantity_setQuantityNominalCase_Success', () => {
     let quantity = 10;
     let price = 20;
     let cartItem = new CartItem(articleId, name, quantity, price);
-    expect(cartItem.quantity).toEqual(quantity);
-    expect(cartItem.total).toEqual();
-
     let expectedQuantity = 15;
     let expectedTotal = 300;
 

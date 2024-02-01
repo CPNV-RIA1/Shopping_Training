@@ -122,7 +122,7 @@ test('count_EmptyCart_ThrowException', () => {
     expect(() => cart.count()).toThrow(EmptyCartException);
 })
 
-test('add_EmptyCartAddFirstSingleCartItem_GetsUpdatedNumberOfItems', () => {
+test('add_EmptyCartAddFirstSingleCartItem_totalCorrecltyUpdated', () => {
     //given
     let cart = new Cart(null);
     let expectedTotalPrice = 10;
