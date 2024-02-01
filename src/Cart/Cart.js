@@ -19,14 +19,6 @@ module.exports = class Cart {
         this.#ensureItemsNotEmpty(this.#items)
         return this.#items.reduce((accumulator, item) => accumulator + item.total, 0);
     }
-    count(distinct = false){
-        this.#ensureItemsNotEmpty(this.#items)
-        return distinct ? this.#items.length : this.#items.reduce((accumulator, item) => accumulator + item.quantity, 0);
-    }
-    add(items){
-        if(this.#areItemsEmpty(items)) throw new UpdateCartException();
-        this.#items.push(...items)
-    }
     //endregion public methods
 
     //region private methods
