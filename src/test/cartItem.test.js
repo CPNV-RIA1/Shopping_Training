@@ -51,7 +51,7 @@ test('constructor_InvalidQuantity_ThrowException', () => {
     //given
     let articleId = 1;
     let name = "Iphone 27";
-    let quantity = -10;//Invalid article id (smaller than 1)
+    let quantity = -10;//Invalid quantity (smaller than 1)
     let price = 20;
 
     //when
