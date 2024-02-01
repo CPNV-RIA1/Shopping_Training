@@ -11,11 +11,11 @@ module.exports = class Cart {
         this.#items = items;
     }
     get items(){
-        if(this.#areItemsEmpty()) throw new EmptyCartException();
+        this.#ensureItemsNotEmpty()
         return this.#items;
     }
     get total(){
-        if(this.#areItemsEmpty()) throw new EmptyCartException();
+        this.#ensureItemsNotEmpty()
         return this.#items.reduce((accumulator, item) => accumulator + item.total, 0);
     }
     count(distinct = false){
@@ -24,6 +24,9 @@ module.exports = class Cart {
     //endregion public methods
 
     //region private methods
+    #ensureItemsNotEmpty(){
+        if(this.#areItemsEmpty()) throw new EmptyCartException();
+    }
     #areItemsEmpty(){
         return !this.#items || this.#items.length < 1;
     }
