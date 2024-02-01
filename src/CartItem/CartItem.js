@@ -7,58 +7,62 @@ const InvalidPriceException = require("./InvalidPriceException.js");
 module.exports = class CartItem {
 
     //region private attributes
+    #articleId;
+    #name;
+    #quantity;
+    #price;
     //endregion private attributes
 
     //region public methods
     constructor(articleId, name, quantity, price) {
-        if(!this.isArticleIdValid(articleId)) throw new InvalidArticleIdException();
-        if(!this.isQuantityValid(quantity)) throw new InvalidQuantityException();
-        if(!this.isPriceValid(price)) throw new InvalidPriceException();
-        this._articleId = articleId;
-        this._name = name;
-        this._quantity = quantity;
-        this._price = price;
+        if(!this.#isArticleIdValid(articleId)) throw new InvalidArticleIdException();
+        if(!this.#isQuantityValid(quantity)) throw new InvalidQuantityException();
+        if(!this.#isPriceValid(price)) throw new InvalidPriceException();
+        this.#articleId = articleId;
+        this.#name = name;
+        this.#quantity = quantity;
+        this.#price = price;
     }
 
     get articleId() {
-        return this._articleId;
+        return this.#articleId;
     }
 
     get name() {
-        return this._name;
+        return this.#name;
     }
 
     get quantity() {
-        return this._quantity;
+        return this.#quantity;
     }
 
     set quantity(value) {
-        if(!this.isQuantityValid(value)) throw new InvalidQuantityException();
-        this._quantity = value;
+        if(!this.#isQuantityValid(value)) throw new InvalidQuantityException();
+        this.#quantity = value;
     }
 
     get price() {
-        return this._price;
+        return this.#price;
     }
 
     set price(value) {
-        if(!this.isPriceValid(value)) throw new InvalidPriceException();
-        this._price = value;
+        if(!this.#isPriceValid(value)) throw new InvalidPriceException();
+        this.#price = value;
     }
 
     get total() {
-        return this._price * this._quantity;
+        return this.#price * this.#quantity;
     }
     //endregion public methods
 
     //region private methods
-    isArticleIdValid(articleId){
+    #isArticleIdValid(articleId){
         return articleId >= 1;
     }
-    isQuantityValid(quantity){
+    #isQuantityValid(quantity){
         return quantity >= 1;
     }
-    isPriceValid(quantity){
+    #isPriceValid(quantity){
         return quantity >= 10;
     }
     //endregion private methods
