@@ -8,7 +8,7 @@ module.exports = class Cart {
 
     //region public methods
     constructor(items) {
-        this.#items = items;
+        this.#items = items ?? []
     }
     get items(){
         this.#ensureItemsNotEmpty(this.#items)
