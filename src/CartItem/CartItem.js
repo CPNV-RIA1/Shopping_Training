@@ -33,6 +33,7 @@ module.exports = class CartItem {
     }
 
     set quantity(value) {
+        if(!this.isQuantityValid(value)) throw new InvalidQuantityException();
         this._quantity = value;
     }
 
@@ -41,6 +42,7 @@ module.exports = class CartItem {
     }
 
     set price(value) {
+        if(!this.isPriceValid(value)) throw new InvalidPriceException();
         this._price = value;
     }
 
