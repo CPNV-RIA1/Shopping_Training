@@ -18,7 +18,9 @@ Note : configuration testée et validée sur l'IDE WebStorm : version 2023.3.2
 
 * Réaliser un fork via les outils en ligne de github
 * Cloner le dépôt en local
+* Activer Git-flow
 * Ajouter une référence à votre propre dépôt (pour recevoir des mises à jour ou des correctifs)
+* Réaliser une tentative de mise à jour entre la branche develop distante et la votre
 
 * [How to fork on Github](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 
@@ -39,7 +41,7 @@ Après avoir récupéré le référentiel:
   found 0 vulnerabilities
 ```
 
-## Webstorm
+## Configuration de l'IDE Webstorm pour les tests, le debug et la couverture du code
 
 * [Jest](https://www.jetbrains.com/help/webstorm/running-unit-tests-on-jest.html#ws_node_test_docker)
 * [Debug Test](https://www.jetbrains.com/help/webstorm/running-unit-tests-on-jest.html#ws_jest_debugging_tests)
